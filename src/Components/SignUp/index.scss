@@ -6,8 +6,10 @@
   .sign-up-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: auto;
 
-    padding-top: 14.3rem;
+    padding: 14.2rem 0;
     gap: 30rem;
 
     .sign-up-container__food-explorer {
