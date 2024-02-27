@@ -1,11 +1,15 @@
 import React from 'react'
 import "./index.scss";
 
-const ButtonLogin: React.FC = () => {
+interface ButtonLoginProps {
+  buttonText: string; // Definindo buttonText como uma propriedade do tipo string
+}
+
+const ButtonLogin: React.FC<ButtonLoginProps> = ({ buttonText }) => {
 
   return (
     <button className='btn-login-container'>
-      Criar Conta
+      {buttonText}
     </button>
   );
 };
