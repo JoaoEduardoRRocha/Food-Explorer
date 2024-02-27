@@ -1,10 +1,10 @@
 import './App.scss'
-import SignIn from './Pages/SignIn'
+import Home from './Pages/Home'
 
 function App() {
   return (
     <>
-      <SignIn />
+      <Home />
     </>
   )
 }
