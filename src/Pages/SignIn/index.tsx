@@ -1,8 +1,8 @@
 import React from 'react'
 import "./index.scss";
-import ButtonLogin from "../ButtonLogin"
-import InputForm from "../InputForm"
-import LabelForm from "../LabelForm"
+import ButtonLogin from "../../Components/ButtonLogin"
+import InputForm from "../../Components/InputForm"
+import LabelForm from "../../Components/LabelForm"
 
 const SignIn: React.FC = () => {
 
@@ -46,6 +46,7 @@ const SignIn: React.FC = () => {
           />
 
           <p className='sign-in-container__form-container__create-account'>Criar uma conta</p>
+          <p className='sign-in-container__form-container__forgot-account'>Esqueci a senha</p>
         </div>
       </div>
     </main>
