@@ -26,6 +26,7 @@ const ForgotPassword: React.FC = () => {
           />
           <InputForm
             placeholder='Exemplo: email@email.com.br'
+            type='email'
             backgroundColor='#001119'
             textColor='#7C7C8A'
             border="1px solid white"

@@ -26,6 +26,7 @@ const SignUp: React.FC = () => {
           />
           <InputForm
             placeholder='Exemplo: Maria da Silva'
+            type='name'
             backgroundColor='#0D1D25'
             textColor='#7C7C8A'
           />
@@ -35,6 +36,7 @@ const SignUp: React.FC = () => {
           />
           <InputForm
             placeholder='Exemplo: exemplo@exemplo.com.br'
+            type='email'
             backgroundColor='#0D1D25'
             textColor='#7C7C8A'
           />
@@ -44,6 +46,7 @@ const SignUp: React.FC = () => {
           />
           <InputForm
             placeholder='No mínimo 6 caracteres'
+            type='password'
             backgroundColor='#0D1D25'
             textColor='#7C7C8A'
           />

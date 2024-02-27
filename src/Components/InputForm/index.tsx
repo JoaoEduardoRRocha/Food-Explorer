@@ -3,12 +3,14 @@ import "./index.scss";
 
 interface FieldLoginProps {
   placeholder: string;
+  type: string;
   backgroundColor?: string;
   textColor?: string;
   border?: string;
+
 }
 
-const FieldLogin: React.FC<FieldLoginProps> = ({ placeholder, backgroundColor, textColor, border }) => {
+const FieldLogin: React.FC<FieldLoginProps> = ({ placeholder, type, backgroundColor, textColor, border }) => {
   return (
     <input
       style={{
@@ -18,6 +20,7 @@ const FieldLogin: React.FC<FieldLoginProps> = ({ placeholder, backgroundColor, t
       }}
       className='input-login-container'
       placeholder={placeholder}
+      type={type}
     >
     </input>
   );

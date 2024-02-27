@@ -4,6 +4,7 @@ import ButtonLogin from "../../Components/ButtonLogin"
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
 
+
 const SignIn: React.FC = () => {
 
   return (
@@ -22,20 +23,22 @@ const SignIn: React.FC = () => {
           <p className='sign-in-container__form-container__card-title'>Faça Login</p>
 
           <LabelForm
-            labelText='Seu Nome'
+            labelText='Email'
           />
           <InputForm
-            placeholder='Exemplo: Maria da Silva'
+            placeholder='Exemplo: exemplo@exemplo.com.br'
+            type='email'
             backgroundColor='#001119'
             textColor='#7C7C8A'
             border="1px solid white"
           />
 
           <LabelForm
-            labelText='Email'
+            labelText='Senha'
           />
           <InputForm
-            placeholder='Exemplo: exemplo@exemplo.com.br'
+            placeholder='No mínimo 6 caracteres'
+            type='password'
             backgroundColor='#001119'
             textColor='#7C7C8A'
             border="1px solid white"
@@ -44,7 +47,6 @@ const SignIn: React.FC = () => {
           <ButtonLogin
             buttonText="Entrar"
           />
-
           <p className='sign-in-container__form-container__create-account'>Criar uma conta</p>
           <p className='sign-in-container__form-container__forgot-account'>Esqueci a senha</p>
         </div>
