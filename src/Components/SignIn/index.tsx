@@ -2,7 +2,7 @@ import React from 'react'
 import "./index.scss";
 import ButtonLogin from "../ButtonLogin"
 
-const SignUp: React.FC = () => {
+const SignIn: React.FC = () => {
 
   return (
     <main className='sign-up-background'>
@@ -42,4 +42,4 @@ const SignUp: React.FC = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;
