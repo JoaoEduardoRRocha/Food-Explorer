@@ -1,13 +1,13 @@
 .btn-login-container {
-  padding: 1.2rem 13.4rem;
-
   font-size: 1.4rem;
   font-weight: 500;
   font-family: 'Poppins';
+  color: var(--text--primary);
+
+  padding: 1.2rem 13.4rem;
 
   border: none;
   border-radius: 0.5rem;
 
-  color: var(--text--primary);
   background-color: var(--bg--btnLogin);
 }
