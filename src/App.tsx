@@ -1,10 +1,10 @@
 import './App.scss'
-import SignIn from './Components/SignIn'
+import ForgotPassword from './Components/ForgotPassword'
 
 function App() {
   return (
     <>
-      <SignIn />
+      <ForgotPassword />
     </>
   )
 }
