@@ -1,41 +1,51 @@
 import React from 'react'
 import "./index.scss";
 import ButtonLogin from "../ButtonLogin"
+import InputForm from "../InputForm"
+import LabelForm from "../LabelForm"
 
 const SignIn: React.FC = () => {
 
   return (
-    <main className='sign-up-background'>
-      <div className='sign-up-container'>
-        <div className='sign-up-container__food-explorer'>
+    <main className='sign-in-background'>
+      <div className='sign-in-container'>
+        <div className='sign-in-container__food-explorer'>
           <img
-            className='sign-up-container__food-explorer__icon'
+            className='sign-in-container__food-explorer__icon'
             src="https://64.media.tumblr.com/dd33e1531a07320c65d37b66c7f49acd/4792f286ff3dcb78-15/s100x200/88b955bac07de7ef8685950c208a793bda1afc41.pnj"
             alt=""
           />
-          <p className='sign-up-container__food-explorer__name-logo'>food explorer</p>
+          <p className='sign-in-container__food-explorer__name-logo'>food explorer</p>
         </div>
 
-        <div className='sign-up-container__form-container'>
-          <p className='sign-up-container__form-container__card-title'>Faça Login</p>
+        <div className='sign-in-container__form-container'>
+          <p className='sign-in-container__form-container__card-title'>Faça Login</p>
 
-          <label className='sign-up-container__form-container__label'>Email</label>
-          <input
-            className='sign-up-container__form-container__input'
-            type="text"
+          <LabelForm
+            labelText='Seu Nome'
+          />
+          <InputForm
+            placeholder='Exemplo: Maria da Silva'
+            backgroundColor='#001119'
+            textColor='#7C7C8A'
+            border="1px solid white"
+          />
+
+          <LabelForm
+            labelText='Email'
+          />
+          <InputForm
             placeholder='Exemplo: exemplo@exemplo.com.br'
+            backgroundColor='#001119'
+            textColor='#7C7C8A'
+            border="1px solid white"
           />
 
-          <label className='sign-up-container__form-container__label'>Senha</label>
-          <input
-            className='sign-up-container__form-container__input'
-            type="text"
-            placeholder='No mínimo 6 caracteres'
+          <ButtonLogin
+            buttonText="Entrar"
           />
 
-          <ButtonLogin />
-
-          <p className='sign-up-container__form-container__create-account'>Criar uma conta</p>
+          <p className='sign-in-container__form-container__create-account'>Criar uma conta</p>
         </div>
       </div>
     </main>
