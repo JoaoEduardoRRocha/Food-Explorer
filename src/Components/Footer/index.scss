@@ -1,0 +1,36 @@
+.footer-container {
+  width: 100%;
+  color: #4D585E;
+  background-color: #00111A;
+
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: auto;
+    max-width: 1122px;
+
+    .footer-content__logo-img-tex {
+      display: flex;
+      align-items: center;
+      margin: 2.3rem 0;
+      gap: 1rem;
+
+      .footer-content__logo-img {
+        width: 3rem;
+      }
+  
+      .footer-content__logo-text {
+        font-size: 'Roboto';
+        font-weight: bold;
+        font-size: 2.4rem;
+      }
+    }
+    
+    .footer-content__copyright {
+      color: #FFFAF1;
+    }
+  }
+}
