@@ -3,6 +3,7 @@ import "./index.scss";
 import ButtonLogin from "../../Components/ButtonLogin"
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
+import { Link } from 'react-router-dom';
 
 
 const SignIn: React.FC = () => {
@@ -47,8 +48,16 @@ const SignIn: React.FC = () => {
           <ButtonLogin
             buttonText="Entrar"
           />
-          <p className='sign-in-container__form-container__create-account'>Criar uma conta</p>
-          <p className='sign-in-container__form-container__forgot-account'>Esqueci a senha</p>
+
+          <div className='Link'>
+            <Link to="/sign-up">
+              <p className='sign-in-container__form-container__create-account'>Criar uma conta</p>
+            </Link>
+
+            <Link to="/forgot-password">
+              <p className='sign-in-container__form-container__forgot-account'>Esqueci a senha</p>
+            </Link>
+          </div>
         </div>
       </div>
     </main>

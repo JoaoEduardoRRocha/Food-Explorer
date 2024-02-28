@@ -3,6 +3,7 @@ import "./index.scss";
 import ButtonLogin from "../../Components/ButtonLogin"
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
+import { Link } from 'react-router-dom';
 
 const SignUp: React.FC = () => {
 
@@ -55,7 +56,9 @@ const SignUp: React.FC = () => {
             buttonText="Criar Conta"
           />
 
-          <p className='sign-up-container__form-container__create-account'>Já tenho uma conta</p>
+          <Link to='/'>
+            <p className='sign-up-container__form-container__create-account'>Já tenho uma conta</p>
+          </Link>
         </div>
       </div>
     </main>

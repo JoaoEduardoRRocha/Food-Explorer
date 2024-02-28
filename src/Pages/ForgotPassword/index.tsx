@@ -3,6 +3,7 @@ import "./index.scss";
 import ButtonLogin from "../../Components/ButtonLogin"
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
+import { Link } from 'react-router-dom';
 
 const ForgotPassword: React.FC = () => {
 
@@ -36,7 +37,9 @@ const ForgotPassword: React.FC = () => {
             buttonText="Resetar"
           />
 
-          <p className='forgot-password-container__form-container__create-account'>Criar uma conta</p>
+          <Link to="/sign-up">
+            <p className='forgot-password-container__form-container__create-account'>Criar uma conta</p>
+          </Link>
         </div>
       </div>
     </main>

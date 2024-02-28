@@ -19,9 +19,9 @@
       .sign-in-container__food-explorer__icon {
         width: 5rem;
       }
-    
+
       .sign-in-container__food-explorer__name-logo {
-        font-family: 'Roboto';
+        font-family: "Roboto";
         font-weight: bold;
         font-size: 4.2rem;
         color: var(--text--primary);
@@ -33,7 +33,7 @@
     .sign-in-container__form-container {
       display: flex;
       flex-direction: column;
-      
+
       padding: 6.4rem;
 
       border-radius: 1.6rem;
@@ -45,33 +45,32 @@
         margin-bottom: 3.2rem;
 
         font-size: 3.2rem;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: 400;
         color: var(--text--primary);
       }
 
       .sign-in-container__form-container__create-account {
         text-align: center;
-
+        text-decoration: none;
         margin-top: 3.2rem;
 
         font-size: 1.4rem;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: medium;
         color: var(--text--primary);
       }
 
       .sign-in-container__form-container__forgot-account {
         text-align: center;
-
+        text-decoration: none;
         margin-top: 1rem;
 
         font-size: 1.4rem;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: medium;
         color: var(--text--primary);
       }
     }
   }
 }
-
