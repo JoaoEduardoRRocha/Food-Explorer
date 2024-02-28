@@ -6,7 +6,7 @@ import Footer from '../../Components/Footer';
 import { IoIosArrowBack } from "react-icons/io";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 
-const Home: React.FC = () => {
+const FoodDetail: React.FC = () => {
 
   return (
     <article className='food-detail-container'>
@@ -60,4 +60,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default FoodDetail;
