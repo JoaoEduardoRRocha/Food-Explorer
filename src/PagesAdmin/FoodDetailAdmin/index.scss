@@ -1,0 +1,82 @@
+.food-detail-container__content-max-width {
+  color: var(--text--nameFood);
+  background-color: var(--bg--primary);
+
+  .food-detail-container__content__btn-back {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    max-width: 112.4rem;
+    padding: 2.4rem 0 4.2rem 0;
+
+    .food-detail-container__content__btn-back-text {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+  }
+
+  .food-detail-container__content {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 112.4rem;
+  
+    .food-detail-container__content__plate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      padding-bottom: 15rem;
+  
+      .food-detail-container__content__plate-img {
+        width: 40rem;
+        border-radius: 50%;
+      }
+    }
+  
+    .food-detail-container__content__plate-name-description {
+      display: flex;
+      flex-direction: column;
+      max-width: 68.7rem;
+  
+      margin-left: 5rem;
+  
+      .food-detail-container__content__plate-name {
+        font-size: 4rem;
+        font-weight: medium;
+      }
+  
+      .food-detail-container__content__plate-description {
+        margin-top: 2.4rem;
+  
+        font-size: 2.4rem;
+        font-weight: normal;
+      }
+  
+      .food-detail-container__content__plate-ingredients {
+        padding: 0.4rem 0.8rem;
+        width: fit-content;
+        margin-top: 2.4rem;
+        border-radius: 0.5rem;
+        background-color: #192227;
+      }
+    }
+  
+    .food-detail-container__content__plate-quantify-container {
+      display: flex;
+      align-items: center;
+  
+      margin-top: 5rem;
+  
+      .food-detail-container__content__plate-quantify-btn-edit {
+        padding: 1.2rem 2.4rem;
+        border-radius: 0.5rem;
+        border: none;
+  
+        color: #FFFFFF;
+        background-color: var(--bg--btnInclude);
+      }
+    }
+  }
+}
+
