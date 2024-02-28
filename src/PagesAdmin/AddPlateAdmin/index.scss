@@ -1,0 +1,21 @@
+.add-plate-container {
+  color: #E1E1E6;
+  background-color: var(--bg--primary);
+
+  .add-plate-container__content__btn-back {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    max-width: 112.4rem;
+    padding: 2.4rem 0 4.2rem 0;
+
+    .add-plate-container__content__btn-back-text {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+  }
+
+  
+
+}
+
