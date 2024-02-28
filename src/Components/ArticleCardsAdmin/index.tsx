@@ -1,40 +1,62 @@
-import React from 'react'
+import React from 'react';
 import "./index.scss";
+import { Food } from '../../Models/food';
+import FoodCardAdmin from '../FoodCardAdmin';
 
-import { PiPencilSimple } from "react-icons/pi";
+interface ArticleCardsAdminProps {
+  foods: Food[];
+}
 
-const Home: React.FC = () => {
+const ArticleCardsAdmin: React.FC<ArticleCardsAdminProps> = (props) => {
+  const meals = props.foods.filter(food => food.type === 'meal');
+  const desserts = props.foods.filter(food => food.type === 'dessert');
+  const drinks = props.foods.filter(food => food.type === 'drink');
 
   return (
-    <article className='article-content'>
-      <legend className='article-content__title-article'>Refeições</legend>
-
-      <div className='article-content__card-container'>
-        <div className='article-content__card-container__img-food'>
-          <img
-            className='article-content__card-container__img-food-size'
-            src="https://64.media.tumblr.com/8d7ea49ff7eac66034277360b62d8bc3/d37ed12966cfc5da-e5/s1280x1920/a3b9ffac74bb840c551532a8c89003073166b3c2.pnj"
-            alt=""
-          />
-        </div>
-        <div className='article-content__card-container__name-food'>
-          Salada Ravanello
-        </div>
-        <div className='article-content__card-container__description-food'>
-          Rabanetes, folhas verdes e molho agridoce salpicados com gergelim
-        </div>
-        <div className='article-content__card-container__price-food'>
-          R$ 49,97
-        </div>
-
-        <div className='article-content__card-container__pencil-icon'>
-          <PiPencilSimple
-            size={25}
-          />
-        </div>
+    <div>
+      <legend className='title-food'>Refeições</legend>
+      <div className='align-cards-meal'>
+        {
+          meals.map((food, index) => (
+            <div key={index}>
+              <FoodCardAdmin
+                key={food._id}
+                food={food}
+              />
+            </div>
+          ))
+        }
       </div>
-    </article>
+
+      <legend className='title-food'>Sobremesas</legend>
+      <div className='align-cards-dessert'>
+        {
+          desserts.map((food, index) => (
+            <div key={index}>
+              <FoodCardAdmin
+                key={food._id}
+                food={food}
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <legend className='title-food'>Bebidas</legend>
+      <div className='align-cards-drink'>
+        {
+          drinks.map((food, index) => (
+            <div key={index}>
+              <FoodCardAdmin
+                key={food._id}
+                food={food}
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
   );
 };
 
-export default Home;
+export default ArticleCardsAdmin;
