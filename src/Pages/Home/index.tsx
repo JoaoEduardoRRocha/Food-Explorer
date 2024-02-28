@@ -3,6 +3,7 @@ import "./index.scss";
 import Navbar from '../../Components/Navbar';
 import HeroSection from '../../Components/HeroSection';
 import ArticleCards from "../../Components/ArticleCards"
+import Footer from '../../Components/Footer';
 
 const Home: React.FC = () => {
 
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       <Navbar />
       <HeroSection />
       <ArticleCards />
+      <Footer />
     </main>
   );
 };
