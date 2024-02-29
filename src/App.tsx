@@ -7,6 +7,7 @@ import Home from './Pages/Home'
 import HomeAdmin from './PagesAdmin/HomeAdmin'
 import FoodDetail from './Pages/FoodDetail'
 import FoodDetailAdmin from './PagesAdmin/FoodDetailAdmin'
+import AddPlateAdmin from './PagesAdmin/AddPlateAdmin'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/home-admin" element={<HomeAdmin />} />
           <Route path="/food-detail" element={<FoodDetail />} />
           <Route path="/food-detail-admin" element={<FoodDetailAdmin />} />
+          <Route path="/add-plate-admin" element={<AddPlateAdmin />} />
         </Routes>
       </BrowserRouter>
     </>
