@@ -2,8 +2,10 @@ import React from 'react'
 import "./index.scss";
 import NavbarAdmin from '../../Components/NavbarAdmin';
 import Footer from '../../Components/Footer';
+import SelectComponent from '../../Components/SelectComponent';
 
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack, IoMdClose } from "react-icons/io";
+import { FiUpload } from "react-icons/fi";
 
 const AddPlateAdmin: React.FC = () => {
 
@@ -19,6 +21,115 @@ const AddPlateAdmin: React.FC = () => {
             voltar
           </div>
         </div>
+
+        <div className='add-plate-container__content__label-fields'>
+          <div>
+            <label className='add-plate-container__content__label-main'>Adicionar Prato</label>
+          </div>
+
+          <div className='add-plate-container__content__align-label-fields'>
+            <div>
+              <div>
+                <label className='add-plate-container__content__label'>Imagem do prato</label>
+                <label className='add-plate-container__content__btn-upload-img' htmlFor="updload-file">
+                  <FiUpload
+                    size={24}
+                  />
+                  Selecionar imagem
+                </label>
+                <input className='add-plate-container__content__upload-file' id="updload-file" type='file' />
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <label
+                  className='add-plate-container__content__label'
+                >
+                  Nome
+                </label>
+              </div>
+              <input
+                className='add-plate-container__content__field-name'
+                type='text'
+                placeholder='Ex: Salada Ceasar'
+              />
+            </div>
+
+            <div>
+              <div>
+                <label
+                  className='add-plate-container__content__label'
+                >
+                  Categoria
+                </label>
+              </div>
+              <SelectComponent />
+            </div>
+          </div>
+
+          <div className='add-plate-container__content__align-label-fields'>
+            <div>
+              <div>
+                <label
+                  className='add-plate-container__content__label'
+                >
+                  Ingredientes
+                </label>
+              </div>
+              <div className="add-plate-container__content__ingredients" >
+                <div
+                  className="add-plate-container__content__new-ingredients"
+                >
+                  Pão Naan
+                  <IoMdClose size={15} />
+                </div>
+                <button
+                  className="add-plate-container__content__ingredients-btn"
+                >
+                  Adicionar +
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <label
+                  className='add-plate-container__content__label'
+                >
+                  Preço
+                </label>
+              </div>
+              <input
+                className="add-plate-container__content__price"
+                type="text"
+                placeholder='R$ 00,00'
+              />
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <label
+                className='add-plate-container__content__label'
+              >
+                Descrição
+              </label>
+            </div>
+            <textarea
+              className="add-plate-container__content__description"
+              placeholder='Fale brevemente sobre o prato, seus ingredientes e composição'
+            >
+            </textarea>
+          </div>
+
+          <button
+            className="add-plate-container__content__btn-save"
+          >
+            Salvar alterações
+          </button>
+        </div>
+
       </div>
       <Footer />
     </main>
