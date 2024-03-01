@@ -1,11 +1,12 @@
 import React from 'react'
 import "./index.scss";
-import NavbarAdmin from '../../Components/NavbarAdmin';
+import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import Footer from '../../Components/Footer';
 import SelectComponent from '../../Components/SelectComponent';
 
 import { IoIosArrowBack, IoMdClose } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 
 const AddPlateAdmin: React.FC = () => {
 
@@ -14,12 +15,17 @@ const AddPlateAdmin: React.FC = () => {
       <NavbarAdmin />
       <div className='add-plate-container__content-max-width'>
         <div className='add-plate-container__content__btn-back'>
-          <IoIosArrowBack
-            size={25}
-          />
-          <div className='add-plate-container__content__btn-back-text'>
-            voltar
-          </div>
+          <Link
+            className="link-style"
+            to='/home-admin'
+          >
+            <div className='add-plate-container__content__btn-back-text'>
+              <IoIosArrowBack
+                size={25}
+              />
+              voltar
+            </div>
+          </Link>
         </div>
 
         <div className='add-plate-container__content__label-fields'>

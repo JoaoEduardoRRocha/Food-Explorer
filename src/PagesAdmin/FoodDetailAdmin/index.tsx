@@ -1,6 +1,6 @@
 import React from 'react'
 import "./index.scss";
-import NavbarAdmin from '../../Components/NavbarAdmin';
+import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import Footer from '../../Components/Footer';
 
 import { IoIosArrowBack } from "react-icons/io";

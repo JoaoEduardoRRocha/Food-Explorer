@@ -20,9 +20,9 @@
       .forgot-password-container__food-explorer__icon {
         width: 5rem;
       }
-    
+
       .forgot-password-container__food-explorer__name-logo {
-        font-family: 'Roboto';
+        font-family: "Roboto";
         font-weight: bold;
         font-size: 4.2rem;
         color: var(--text--primary);
@@ -30,7 +30,7 @@
         margin-left: 2rem;
       }
     }
-    
+
     .forgot-password-container__form-container {
       display: flex;
       flex-direction: column;
@@ -43,7 +43,7 @@
       .forgot-password-container__form-container__card-title {
         text-align: center;
         font-size: 3.2rem;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: 400;
         color: var(--text--primary);
 
@@ -53,7 +53,7 @@
       .forgot-password-container__form-container__create-account {
         text-align: center;
         font-size: 1.4rem;
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-weight: medium;
         color: var(--text--primary);
 
@@ -61,5 +61,9 @@
       }
     }
   }
-}
 
+  .link-style {
+    text-decoration: none;
+    color: white;
+  }
+}

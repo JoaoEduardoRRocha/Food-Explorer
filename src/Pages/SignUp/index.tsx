@@ -56,7 +56,9 @@ const SignUp: React.FC = () => {
             buttonText="Criar Conta"
           />
 
-          <Link to='/'>
+          <Link 
+            className="link-style"
+            to='/'>
             <p className='sign-up-container__form-container__create-account'>Já tenho uma conta</p>
           </Link>
         </div>

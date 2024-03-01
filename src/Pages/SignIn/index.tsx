@@ -44,17 +44,21 @@ const SignIn: React.FC = () => {
             textColor='#7C7C8A'
             border="1px solid white"
           />
-
+          
           <ButtonLogin
             buttonText="Entrar"
           />
 
           <div className='Link'>
-            <Link to="/sign-up">
+            <Link 
+              className='link-style'
+              to="/sign-up">
               <p className='sign-in-container__form-container__create-account'>Criar uma conta</p>
             </Link>
 
-            <Link to="/forgot-password">
+            <Link
+              className='link-style'
+              to="/forgot-password">
               <p className='sign-in-container__form-container__forgot-account'>Esqueci a senha</p>
             </Link>
           </div>

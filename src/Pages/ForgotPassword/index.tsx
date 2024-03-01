@@ -37,7 +37,9 @@ const ForgotPassword: React.FC = () => {
             buttonText="Resetar"
           />
 
-          <Link to="/sign-up">
+          <Link
+            className='link-style'
+            to="/sign-up">
             <p className='forgot-password-container__form-container__create-account'>Criar uma conta</p>
           </Link>
         </div>

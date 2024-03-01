@@ -1,10 +1,10 @@
 import React from 'react'
 import "./index.scss";
-import NavbarAdmin from '../../Components/NavbarAdmin';
+import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import HeroSection from '../../Components/HeroSection';
 import Footer from '../../Components/Footer';
 import { Food } from '../../Models/food';
-import ArticleCardsAdmin from '../../Components/ArticleCardsAdmin';
+import ArticleCardsAdmin from '../../ComponentsAdmin/ArticleCardsAdmin';
 
 const Home: React.FC = () => {
   const meal1: Food = {
