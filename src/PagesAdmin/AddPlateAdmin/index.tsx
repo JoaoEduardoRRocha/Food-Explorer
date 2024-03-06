@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 import "./index.scss";
 import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import Footer from '../../Components/Footer';
@@ -7,8 +8,42 @@ import SelectComponent from '../../Components/SelectComponent';
 import { IoIosArrowBack, IoMdClose } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import { Food } from '../../Models/food'
+import { useNavigate } from 'react-router-dom'
 
 const AddPlateAdmin: React.FC = () => {
+
+  const navigate = useNavigate()
+  const [food, setFoods] = React.useState<Food>({
+    _id: 0,
+    name: '',
+    description: '',
+    price: 0,
+    image: '',
+    type: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFoods((prevFood) => ({
+      ...prevFood,
+      [e.target.name]: e.target.value
+    }));
+  }
+
+  const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setFoods((prevFood) => ({
+      ...prevFood,
+      [e.target.name]: e.target.value
+    }));
+  }
+
+  const handleSubmit = () => {
+    axios.post('http://localhost:3000/api/foods/', food)
+    .then(() => {
+      navigate('/home-admin')
+    })
+    .catch((err) => console.log(err))
+  }
 
   return (
     <main className='add-plate-container'>
@@ -43,7 +78,11 @@ const AddPlateAdmin: React.FC = () => {
                   />
                   Selecionar imagem
                 </label>
-                <input className='add-plate-container__content__upload-file' id="updload-file" type='file' />
+                <input
+                  className='add-plate-container__content__upload-file'
+                  id="updload-file"
+                  type='file'
+                />
               </div>
             </div>
 
@@ -59,6 +98,9 @@ const AddPlateAdmin: React.FC = () => {
                 className='add-plate-container__content__field-name'
                 type='text'
                 placeholder='Ex: Salada Ceasar'
+                value={food?.name}
+                name='name'
+                onChange={(e) => handleInputChange(e)}
               />
             </div>
 
@@ -110,6 +152,9 @@ const AddPlateAdmin: React.FC = () => {
                 className="add-plate-container__content__price"
                 type="text"
                 placeholder='R$ 00,00'
+                name='price'
+                value={food?.price}
+                onChange={(e) => handleInputChange(e)}
               />
             </div>
           </div>
@@ -125,12 +170,16 @@ const AddPlateAdmin: React.FC = () => {
             <textarea
               className="add-plate-container__content__description"
               placeholder='Fale brevemente sobre o prato, seus ingredientes e composição'
+              name='description'
+              value={food?.description}
+              onChange={(e) => handleTextAreaChange(e)}
             >
             </textarea>
           </div>
 
           <button
             className="add-plate-container__content__btn-save"
+            onClick={() => handleSubmit()}
           >
             Salvar alterações
           </button>
