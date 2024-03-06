@@ -71,6 +71,11 @@
 
     border-radius: 0.5rem;
     background-color: var(--bg--btnOrder);
+    transition: filter 0.3s ease;
+  }
+
+  .navbar-container__orders:hover {
+    filter: brightness(1.3);
   }
 
   .navbar-container__logout__icon-size {
