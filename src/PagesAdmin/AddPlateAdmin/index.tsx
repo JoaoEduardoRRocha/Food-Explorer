@@ -10,6 +10,8 @@ import { FiUpload } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import { Food } from '../../Models/food'
 import { useNavigate } from 'react-router-dom'
+import SelectComponent from '../../Components/SelectComponent';
+import InputFile from '../../Components/InputFile';
 
 const AddPlateAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
   const navigate = useNavigate()
@@ -20,14 +22,14 @@ const AddPlateAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
     }
   })
 
-
   const [food, setFoods] = React.useState<Food>({
     _id: 0,
     name: '',
     description: '',
     price: 0,
     image: '',
-    type: ''
+    type: '',
+    ingredients: ''
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,13 +87,7 @@ const AddPlateAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
                   />
                   Selecionar imagem
                 </label>
-                <input
-                  className='add-plate-container__content__upload-file'
-                  id="updload-file"
-                  type='file'
-                  value={food?.image}
-                  name='image'
-                />
+                <InputFile />
               </div>
             </div>
 
@@ -120,6 +116,7 @@ const AddPlateAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
                 >
                   Categoria
                 </label>
+                <SelectComponent />
               </div>
             </div>
           </div>
@@ -140,11 +137,14 @@ const AddPlateAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
                   Pão Naan
                   <IoMdClose size={15} />
                 </div>
-                <button
-                  className="add-plate-container__content__ingredients-btn"
-                >
-                  Adicionar +
-                </button>
+                <input
+                  className='add-plate-container__content__ingredients-btn'
+                  type='text'
+                  placeholder='Adicionar'
+                  value={food?.ingredients}
+                  name='ingredients'
+                  onChange={(e) => handleInputChange(e)}
+                />
               </div>
             </div>
 
