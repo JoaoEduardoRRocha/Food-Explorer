@@ -1,23 +1,34 @@
-import React from "react";
 import "./index.scss"
 
-const SelectComponent: React.FC = () => {
+interface SelectComponentProps {
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+
+const SelectComponent: React.FC<SelectComponentProps> = ({onChange, value}) => {
   return (
     <div className="select-container">
-      <select className="select-content" name="categoria" id="1">
+      <select 
+        className="select-content" 
+        name="categoria" 
+        id="1"
+        onChange={() => onChange()}
+        value={value}  
+      >
         <option
           className="select-content__option"
-          value="1">
+          value="Refeição">
           Refeição
         </option>
         <option
           className="select-content__option"
-          value="2">
+          value="Sobremesa">
           Sobremesa
         </option>
         <option
           className="select-content__option"
-          value="3">
+          value="Bebida">
           Bebida
         </option>
       </select>
