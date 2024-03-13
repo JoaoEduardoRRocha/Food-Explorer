@@ -5,7 +5,6 @@ interface SelectComponentProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-
 const SelectComponent: React.FC<SelectComponentProps> = ({onChange, value}) => {
   return (
     <div className="select-container">
