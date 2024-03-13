@@ -1,12 +1,8 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 import "./index.scss";
-
 import { IoIosSearch } from "react-icons/io";
-import { MdLogout } from "react-icons/md";
 
-
-const Navbar: React.FC = () => {
-
+const Navbar = () => {
   return (
     <nav className='navbar-container'>
       <div className='navbar-content'>
@@ -29,22 +25,15 @@ const Navbar: React.FC = () => {
           />
         </div>
 
-        <div className='navbar-container__orders'>
-          <img
-            className='navbar-container__orders__icon-size'
-            src="https://64.media.tumblr.com/8e4f6fc4c3b9e23ce39948d1ebfda6ff/586db133840cf900-f0/s75x75_c1/a8df9bdb51177b5ee6f96507a04e105d10397309.pnj"
-            alt=""
-          />
-          <p>Pedidos (0)</p>
-        </div>
-
-        <div
-          className='navbar-container__logout__icon-size'
+        <Link
+          className='link-style'
+          to="/login"
         >
-          <MdLogout
-            size={32}
-          />
-        </div>
+          <div 
+            className='navbar-container__orders'>
+            <p>Fazer login</p>
+          </div>
+        </Link>
       </div>
     </nav>
   );
