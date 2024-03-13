@@ -8,6 +8,7 @@ interface ArticleCardsProps {
 }
 
 const ArticleCards: React.FC<ArticleCardsProps> = (props) => {
+  
   const meals = props.foods.filter(food => food.type === 'meal');
   const desserts = props.foods.filter(food => food.type === 'dessert');
   const drinks = props.foods.filter(food => food.type === 'drink');
@@ -45,10 +46,9 @@ const ArticleCards: React.FC<ArticleCardsProps> = (props) => {
       <legend className='title-food'>Bebidas</legend>
       <div className='align-cards-drink'>
         {
-          drinks.map((food, index) => (
-            <div key={index}>
+          drinks.map((food) => (
+            <div key={food._id}>
               <FoodCard
-                key={food._id}
                 food={food}
               />
             </div>
