@@ -2,13 +2,16 @@ import React from 'react'
 import "./index.scss";
 
 interface ButtonLoginProps {
-  buttonText: string; // Definindo buttonText como uma propriedade do tipo string
+  buttonText: string;
+  onClick: () => void;
 }
 
-const ButtonLogin: React.FC<ButtonLoginProps> = ({ buttonText }) => {
-
+const ButtonLogin: React.FC<ButtonLoginProps> = ({ buttonText, onClick }) => {
   return (
-    <button className='btn-login-container'>
+    <button 
+      className='btn-login-container'
+      onClick={onClick}
+    >
       {buttonText}
     </button>
   );
