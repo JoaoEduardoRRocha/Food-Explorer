@@ -1,1 +1,1 @@
-export const PATH = 'http://localhost:5173/'
+export const PATH = 'http://localhost:3000'

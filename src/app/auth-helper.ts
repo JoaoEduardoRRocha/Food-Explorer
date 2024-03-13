@@ -3,36 +3,25 @@ import { User } from "./../Models/user";
 import { PATH } from "./path";
 
 export const setToken = (token: string): void => {
-  localStorage.setItem("jwtToken", token);
+  localStorage.setItem("token", token);
 };
 
 export const getToken = (): string | null => {
-  return localStorage.getItem("jwtToken");
+  return localStorage.getItem("token");
 };
 
 export const removeToken = (): void => {
-  localStorage.removeItem("jwtToken");
+  localStorage.removeItem("token");
 };
 
-export const getUser = async (): Promise<User | null> => {
-    try {
-      const token = getToken();
-      if (!token) return null;
-  
-      const response = await axios.get(`${PATH}/api/auth/me`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        }
-      });
-  
-      if (!response.data) {
-        throw new Error('Failed to fetch user data');
+export const getUser = async (): Promise<User> => {
+    const response = await axios.get(`${PATH}/api/auth/me`, {
+      headers: {
+        token: getToken(),
       }
-  
-      return response.data as User;
-  
-    } catch (error) {
-      console.error('Failed to fetch user:', error);
-      return null;
-    }
+    });
+
+    return new Promise((resolve, reject) => {
+      return resolve(response.data)
+    })
 };
