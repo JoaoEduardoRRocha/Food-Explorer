@@ -1,12 +1,15 @@
-import React from 'react'
 import "./index.scss";
 
 import { IoIosSearch } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import { removeToken } from "../../app/auth-helper";
 
-
-const Navbar: React.FC = () => {
+const Navbar = () => {
+  const handleLogout = () => {
+    removeToken()
+    window.location.reload();
+  }
 
   return (
     <nav className='navbar-container'>
@@ -41,14 +44,15 @@ const Navbar: React.FC = () => {
             <p>Novo prato</p>
           </div>
         </Link>
-      <div
-        className='navbar-container__logout__icon-size'
-      >
-        <MdLogout
-          size={32}
-        />
+        <div
+          className='navbar-container__logout__icon-size'
+          onClick={() => handleLogout()}
+        >
+          <MdLogout
+            size={32}
+          />
+        </div>
       </div>
-    </div>
     </nav >
   );
 };
