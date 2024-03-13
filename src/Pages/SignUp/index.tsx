@@ -1,11 +1,51 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import axios from 'axios';
 import "./index.scss";
 import ButtonLogin from "../../Components/ButtonLogin"
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
-const SignUp: React.FC = () => {
+interface SignUpForm {
+  name: string,
+  email: string,
+  password: string
+}
+
+const SignUp = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
+
+  const navigate = useNavigate()
+
+  const [signUp, setSignUp] = React.useState<SignUpForm>({
+    name: '',
+    email: '',
+    password: '',
+  });
+
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/home')
+    } else {
+      console.log('Erro na autenticação!')
+    }
+  })
+
+  const handleSubmit = () => {
+    axios.post('http://localhost:3000/api/auth/signup', signUp)
+      .then(() => {
+        navigate('/login')
+      })
+      .catch((err) => console.log(err))
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSignUp((prevSignUp) => ({
+      ...prevSignUp,
+      [e.target.name]: e.target.value
+    }));
+  }
+
 
   return (
     <main className='sign-up-background'>
@@ -30,6 +70,9 @@ const SignUp: React.FC = () => {
             type='name'
             backgroundColor='#0D1D25'
             textColor='#7C7C8A'
+            name='name'
+            value={signUp.name}
+            onChange={(e) => handleInputChange(e)}
           />
 
           <LabelForm
@@ -40,6 +83,9 @@ const SignUp: React.FC = () => {
             type='email'
             backgroundColor='#0D1D25'
             textColor='#7C7C8A'
+            name='email'
+            value={signUp.email}
+            onChange={(e) => handleInputChange(e)}
           />
 
           <LabelForm
@@ -50,15 +96,19 @@ const SignUp: React.FC = () => {
             type='password'
             backgroundColor='#0D1D25'
             textColor='#7C7C8A'
+            name='password'
+            value={signUp.password}
+            onChange={(e) => handleInputChange(e)}
           />
 
           <ButtonLogin
-            buttonText="Criar Conta"
+            buttonText="Criar conta"
+            onClick={() => handleSubmit()}
           />
 
-          <Link 
+          <Link
             className="link-style"
-            to='/'>
+            to='/login'>
             <p className='sign-up-container__form-container__create-account'>Já tenho uma conta</p>
           </Link>
         </div>
