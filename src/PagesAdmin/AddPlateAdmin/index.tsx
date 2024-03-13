@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios';
 import "./index.scss";
 import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import Footer from '../../Components/Footer';
-import SelectComponent from '../../Components/SelectComponent';
+// import SelectComponent from '../../Components/SelectComponent';
 
 import { IoIosArrowBack, IoMdClose } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
@@ -11,9 +11,16 @@ import { Link } from 'react-router-dom';
 import { Food } from '../../Models/food'
 import { useNavigate } from 'react-router-dom'
 
-const AddPlateAdmin: React.FC = () => {
-
+const AddPlateAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAdmin) {
+      navigate('/home')
+    }
+  })
+
+
   const [food, setFoods] = React.useState<Food>({
     _id: 0,
     name: '',
@@ -39,10 +46,10 @@ const AddPlateAdmin: React.FC = () => {
 
   const handleSubmit = () => {
     axios.post('http://localhost:3000/api/foods/', food)
-    .then(() => {
-      navigate('/home-admin')
-    })
-    .catch((err) => console.log(err))
+      .then(() => {
+        navigate('/home-admin')
+      })
+      .catch((err) => console.log(err))
   }
 
   return (
@@ -82,6 +89,8 @@ const AddPlateAdmin: React.FC = () => {
                   className='add-plate-container__content__upload-file'
                   id="updload-file"
                   type='file'
+                  value={food?.image}
+                  name='image'
                 />
               </div>
             </div>
@@ -112,7 +121,6 @@ const AddPlateAdmin: React.FC = () => {
                   Categoria
                 </label>
               </div>
-              <SelectComponent />
             </div>
           </div>
 

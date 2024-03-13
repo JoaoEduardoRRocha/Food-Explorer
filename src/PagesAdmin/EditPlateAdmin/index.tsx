@@ -1,4 +1,3 @@
-import React from 'react'
 import "./index.scss";
 import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import Footer from '../../Components/Footer';
@@ -6,9 +5,17 @@ import SelectComponent from '../../Components/SelectComponent';
 
 import { IoIosArrowBack, IoMdClose } from "react-icons/io";
 import { FiUpload } from "react-icons/fi";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
 
-const EditPlateAdmin: React.FC = () => {
+const EditPlateAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAdmin) {
+      navigate('/home')
+    }
+  })
 
   return (
     <main className='add-plate-container'>

@@ -1,11 +1,19 @@
-import React from 'react'
 import "./index.scss";
 import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import Footer from '../../Components/Footer';
 
 import { IoIosArrowBack } from "react-icons/io";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const FoodDetailAdmin: React.FC = () => {
+const FoodDetailAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isAdmin) {
+      navigate('/home')
+    }
+  })
 
   return (
     <main className='home-container'>
@@ -15,9 +23,15 @@ const FoodDetailAdmin: React.FC = () => {
           <IoIosArrowBack
             size={25}
           />
-          <div className='food-detail-container__content__btn-back-text'>
-            voltar
-          </div>
+
+          <Link
+            className="link-style"
+            to='/home-admin'
+          >
+            <div className='food-detail-container__content__btn-back-text'>
+              voltar
+            </div>
+          </Link>
         </div>
         <div className='food-detail-container__content'>
           <div className='food-detail-container__content__plate'>
