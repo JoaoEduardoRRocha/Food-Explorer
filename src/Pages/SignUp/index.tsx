@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import { PATH } from '../../app/path';
+
 import axios from 'axios';
 import "./index.scss";
 import ButtonLogin from "../../Components/ButtonLogin"
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'
 
 interface SignUpForm {
   name: string,
@@ -13,7 +15,7 @@ interface SignUpForm {
   password: string
 }
 
-const SignUp = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
+const SignUp = ({ isAuthenticated }: { isAuthenticated: boolean }) => {
 
   const navigate = useNavigate()
 
@@ -24,7 +26,7 @@ const SignUp = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
   });
 
   useEffect(() => {
-    if(isAuthenticated) {
+    if (isAuthenticated) {
       navigate('/home')
     } else {
       console.log('Erro na autenticação!')
@@ -32,7 +34,7 @@ const SignUp = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
   })
 
   const handleSubmit = () => {
-    axios.post('http://localhost:3000/api/auth/signup', signUp)
+    axios.post(`${PATH}/api/auth/signup`, signUp)
       .then(() => {
         navigate('/login')
       })
@@ -50,15 +52,6 @@ const SignUp = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
   return (
     <main className='sign-up-background'>
       <div className='sign-up-container'>
-        <div className='sign-up-container__food-explorer'>
-          <img
-            className='sign-up-container__food-explorer__icon'
-            src="https://64.media.tumblr.com/dd33e1531a07320c65d37b66c7f49acd/4792f286ff3dcb78-15/s100x200/88b955bac07de7ef8685950c208a793bda1afc41.pnj"
-            alt=""
-          />
-          <p className='sign-up-container__food-explorer__name-logo'>food explorer</p>
-        </div>
-
         <div className='sign-up-container__form-container'>
           <p className='sign-up-container__form-container__card-title'>Crie sua conta</p>
 

@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import { setToken, getUser } from '../../app/auth-helper';
+import { User } from '../../Models/user';
+import { PATH } from '../../app/path';
+
 import axios from 'axios';
 import "./index.scss";
 import ButtonLogin from "../../Components/ButtonLogin"
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'
-import { setToken, getUser } from '../../app/auth-helper';
-import { User } from '../../Models/user';
 
 interface LoginForm {
   email: string,
@@ -34,7 +36,7 @@ const SignIn = ({ isAuthenticated, isAdmin }: { isAuthenticated: boolean, isAdmi
   }, []);
 
   const handleSubmit = () => {
-    axios.post('http://localhost:3000/api/auth/login', loginForm)
+    axios.post(`${PATH}/api/auth/login`, loginForm)
       .then(async response => {
         setToken(response.data.token)
         const user: User = await getUser()
@@ -59,15 +61,6 @@ const SignIn = ({ isAuthenticated, isAdmin }: { isAuthenticated: boolean, isAdmi
   return (
     <main className='sign-in-background'>
       <div className='sign-in-container'>
-        <div className='sign-in-container__food-explorer'>
-          <img
-            className='sign-in-container__food-explorer__icon'
-            src="https://64.media.tumblr.com/dd33e1531a07320c65d37b66c7f49acd/4792f286ff3dcb78-15/s100x200/88b955bac07de7ef8685950c208a793bda1afc41.pnj"
-            alt=""
-          />
-          <p className='sign-in-container__food-explorer__name-logo'>food explorer</p>
-        </div>
-
         <div className='sign-in-container__form-container'>
           <p className='sign-in-container__form-container__card-title'>Faça Login</p>
 
