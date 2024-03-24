@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.background {
+  background-color: var(--bg--primary);
+}
+
 :root {
   font-size: 62.5%;
   --text--primary: #ffffff;
