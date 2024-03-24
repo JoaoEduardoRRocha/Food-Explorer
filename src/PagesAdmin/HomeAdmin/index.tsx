@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import "./index.scss";
-import NavbarAdmin from '../../ComponentsAdmin/NavbarAdmin';
 import HeroSection from '../../Components/HeroSection';
 import Footer from '../../Components/Footer';
 import { Food } from '../../Models/food';
@@ -19,11 +18,10 @@ const HomeAdmin = ({ isAdmin }: { isAdmin: boolean }) => {
     console.log(isAdmin)
     axios.get('http://localhost:3000/api/foods')
       .then(response => setFoods(response.data))
-  }, [isAdmin]);
+  }, [isAdmin, navigate]);
 
   return (
     <main className='home-container'>
-      <NavbarAdmin />
       <HeroSection />
       <ArticleCardsAdmin foods={foods} />
       <Footer />
