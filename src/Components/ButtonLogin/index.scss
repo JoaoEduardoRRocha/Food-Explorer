@@ -1,7 +1,7 @@
 .btn-login-container {
   font-size: 1.4rem;
   font-weight: 500;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: var(--text--primary);
 
   padding: 1.2rem 13.4rem;
@@ -10,4 +10,11 @@
   border-radius: 0.5rem;
 
   background-color: var(--bg--btnLogin);
+  transition: transform 0.3s ease;
+}
+
+.btn-login-container:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  transform: scale(1.01);
 }

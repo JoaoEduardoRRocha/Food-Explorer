@@ -19,6 +19,7 @@
     }
 
     .article-content__card-container__name-food {
+      color: white;
       font-weight: bold;
       font-size: 2.4rem;
       margin-bottom: 1.5rem;
@@ -60,5 +61,10 @@
 
       margin: 1.6rem 1.6rem 0 0;
     }
+  }
+
+  .link-style {
+    color: white;
+    text-decoration: none;
   }
 }
