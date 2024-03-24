@@ -11,6 +11,8 @@ Este projeto está sendo desenvolvido e terá atualizações explicadas neste ca
 - TypeScript
 - React
 - Sass
+- React Router DOM
+- Swiper
 
 Obs: as tecnologias utilizadas serão atualizadas conforme a progressão do projeto.
 
