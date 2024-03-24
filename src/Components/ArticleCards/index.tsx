@@ -9,10 +9,10 @@ interface ArticleCardsProps {
 
 const ArticleCards: React.FC<ArticleCardsProps> = (props) => {
   
-  const meals = props.foods.filter(food => food.type === 'meal');
-  const desserts = props.foods.filter(food => food.type === 'dessert');
-  const drinks = props.foods.filter(food => food.type === 'drink');
-
+  const meals = props.foods.filter(food => food.type === 'Refeição');
+  const desserts = props.foods.filter(food => food.type === 'Sobremesa');
+  const drinks = props.foods.filter(food => food.type === 'Bebida');
+  
   return (
     <div>
       <legend className='title-food'>Refeições</legend>
