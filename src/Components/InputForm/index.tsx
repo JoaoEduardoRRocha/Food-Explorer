@@ -2,13 +2,13 @@ import React from 'react'
 import "./index.scss";
 
 interface FieldLoginProps {
-  placeholder: string;
-  name: string;
-  value: string;
-  type: string;
-  backgroundColor?: string;
-  textColor?: string;
-  border?: string;
+  placeholder: string
+  name: string
+  value: string
+  type: string
+  backgroundColor?: string
+  textColor?: string
+  border?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
