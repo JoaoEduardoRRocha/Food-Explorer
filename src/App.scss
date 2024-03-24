@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  background-color: var(--bg--primary);
+}
+
+:root {
+  font-size: 62.5%;
+  --text--primary: #ffffff;
+  --text--secondary: #7c7c8a;
+  --text--label: #c4c4cc;
+  --text--nameFood: #e1e1e6;
+  --text--price: #82f3ff;
+
+  --bg--primary: #000a0f;
+  --bg--secondary: #001119;
+
+  --bg--inputSearch: #0d1d25;
+  --bg-inputCreate: #0d1d25;
+  --bg--btnLogin: #750310;
+  --bg--btnOrder: #750310;
+  --bg--btnInclude: #750310;
+  --bg--foodCard: #00070a;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+}

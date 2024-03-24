@@ -1,0 +1,77 @@
+.article-content {
+  max-width: 112.2rem;
+  width: 100%;
+  color: var(--text--nameFood);
+
+  .article-content__title-article {
+    font-family: "Poppins";
+    font-weight: medium;
+    font-size: 3.2rem;
+    margin-bottom: 2.3rem;
+  }
+
+  .article-content__card-container {
+    position: relative;
+    text-align: center;
+    padding: 2.4rem;
+
+    max-width: 30.2rem;
+    border-radius: 0.8rem;
+    background-color: var(--bg--foodCard);
+
+    .article-content__card-container__img-food-size {
+      width: 17.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 50%;
+    }
+
+    .article-content__card-container__name-food {
+      color: white;
+      font-weight: bold;
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content__card-container__description-food {
+      font-family: 'Roboto';
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content__card-container__price-food {
+      font-family: 'Roboto';
+      font-size: 3.2rem;
+      color: var(--text--price);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content__card-container__plus-minus-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .article-content__card-container__include {
+      padding: 1.2rem 2.4rem;
+
+      border: none;
+      border-radius: 0.5rem;
+      color: var(--text--primary);
+      background-color: var(--bg--btnInclude);
+    }
+
+    .article-content__card-container__pencil-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      margin: 1.6rem 1.6rem 0 0;
+    }
+  }
+
+  .link-style {
+    color: white;
+    text-decoration: none;
+  }
+}

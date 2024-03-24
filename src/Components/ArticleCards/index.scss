@@ -1,0 +1,34 @@
+.title-food {
+  display: flex;
+  margin: 5rem auto auto auto;
+  max-width: 112.2rem;
+  width: 100%;
+
+  font-family: "Poppins";
+  font-weight: medium;
+  font-size: 3.2rem;
+  margin-bottom: 2.3rem;
+
+  color: var(--text--nameFood);
+}
+
+.align-cards-meal,
+.align-cards-dessert {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  margin: auto;
+  gap: 2.7rem;
+  max-width: 112.2rem;
+  width: 100%;
+}
+
+.align-cards-drink {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  margin: auto auto 5rem auto;
+  gap: 2.7rem;
+  max-width: 112.2rem;
+  width: 100%;
+}

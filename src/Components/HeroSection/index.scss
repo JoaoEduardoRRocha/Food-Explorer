@@ -1,0 +1,33 @@
+.section-content {
+  display: flex;
+  align-items: center;
+  margin: 16.4rem auto 0 auto;
+
+  max-width: 112rem;
+  max-height: 26rem;
+  width: 100%;
+
+  border-radius: 0.4rem;
+  background-color: rgba(9, 30, 38, 1);
+
+  .section-content__hero-img {
+    margin-bottom: 10.2rem;
+  }
+
+  .section-content__text-content {
+    color: #E1E1E6;
+
+    .section-content__text-content__h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      font-weight: medium;
+    }
+
+    .section-content__text-content__h2 {
+      font-family: 'Roboto';
+      font-size: 1.6rem;
+      font-weight: normal;
+      line-height: 140%;
+    }
+  }
+}
