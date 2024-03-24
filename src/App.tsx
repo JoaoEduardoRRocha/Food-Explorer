@@ -55,6 +55,7 @@ function App() {
         <div className='background'>
           <Navbar foods={foods} isAdmin={isAdmin} isAuthenticated={isAuthenticated} />
           <Routes>
+          <Route path="/" element={<Home />} />
             <Route path="/login" element={<SignIn isAuthenticated={isAuthenticated} isAdmin={isAdmin} />} />
             <Route path="/sign-up" element={<SignUp isAuthenticated={isAuthenticated} />} />
             <Route path="/forgot-password" element={<ForgotPassword isAuthenticated={isAuthenticated} />} />
