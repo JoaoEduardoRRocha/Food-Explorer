@@ -2,6 +2,7 @@ import React from 'react'
 import "./index.scss";
 import { Food } from '../../Models/food';
 import { FaRegHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 interface FoodCardProps {
   food: Food;
@@ -18,14 +19,20 @@ const FoodCard: React.FC<FoodCardProps> = ({ food }) => {
             alt=""
           />
         </div>
-        <div className='article-content__card-container__name-food'>
-          {food.name}
-        </div>
+
+        <Link
+          className='link-style'
+          to={`/food-detail?_id=${food._id}`}
+        >
+          <div className='article-content__card-container__name-food'>
+            {food.name}
+          </div>
+        </Link>
         <div className='article-content__card-container__description-food'>
           {food.description}
         </div>
         <div className='article-content__card-container__price-food'>
-          R$ {food.price.toFixed(2)}
+          R$ {food.price}
         </div>
 
         <div className='article-content__card-container__plus-minus-icon'>
