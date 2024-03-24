@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { PATH } from '../../app/path';
+
 import axios from 'axios';
 import "./index.scss";
 import InputForm from "../../Components/InputForm"
 import LabelForm from "../../Components/LabelForm"
 import ButtonLogin from "../../Components/ButtonLogin"
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 interface ChangePasswordForm {
   password: string;
   passwordConfirmation: string;
 }
 
-const ChangePassword = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
+const ChangePassword = ({ isAuthenticated }: { isAuthenticated: boolean }) => {
   const navigate = useNavigate();
   const [changePasswordForm, setChangePasswordForm] = React.useState<ChangePasswordForm>({
     password: '',
@@ -45,7 +47,7 @@ const ChangePassword = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
       token: jwtToken
     };
 
-    axios.post('http://localhost:3000/api/auth/update-password', { password: changePasswordForm.password }, { headers })
+    axios.post(`${PATH}/api/auth/update-password`, { password: changePasswordForm.password }, { headers })
       .then((response) => {
         localStorage.setItem('token', jwtToken);
         navigate('/home')
@@ -56,7 +58,7 @@ const ChangePassword = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
   };
 
   useEffect(() => {
-    if(isAuthenticated) {
+    if (isAuthenticated) {
       navigate('/home')
     } else {
       navigate('/login')
@@ -85,15 +87,6 @@ const ChangePassword = ({ isAuthenticated } : {isAuthenticated: boolean}) => {
   return (
     <main className='sign-up-background'>
       <div className='sign-up-container'>
-        <div className='sign-up-container__food-explorer'>
-          <img
-            className='sign-up-container__food-explorer__icon'
-            src="https://64.media.tumblr.com/dd33e1531a07320c65d37b66c7f49acd/4792f286ff3dcb78-15/s100x200/88b955bac07de7ef8685950c208a793bda1afc41.pnj"
-            alt=""
-          />
-          <p className='sign-up-container__food-explorer__name-logo'>food explorer</p>
-        </div>
-
         {authorized ?
           <div className='sign-up-container__form-container'>
             <p className='sign-up-container__form-container__card-title'>Troque sua senha</p>
