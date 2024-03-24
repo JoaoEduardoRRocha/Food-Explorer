@@ -1,8 +1,8 @@
 import "./index.scss"
 
 interface SelectComponentProps {
-  value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }
 
 const SelectComponent: React.FC<SelectComponentProps> = ({onChange, value}) => {
@@ -12,7 +12,7 @@ const SelectComponent: React.FC<SelectComponentProps> = ({onChange, value}) => {
         className="select-content" 
         name="categoria" 
         id="1"
-        onChange={() => onChange()}
+        onChange={(e) => onChange(e)}
         value={value}  
       >
         <option
