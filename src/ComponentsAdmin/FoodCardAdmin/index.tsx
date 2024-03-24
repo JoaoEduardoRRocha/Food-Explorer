@@ -19,27 +19,30 @@ const FoodCardAdmin: React.FC<FoodCardAdminProps> = ({ food }) => {
             alt=""
           />
         </div>
-        <div className='article-content__card-container__name-food'>
-          {food.name}
-        </div>
+        <Link
+          className='link-style'
+          to={`/food-detail-admin?_id=${food._id}`}
+        >
+          <div className='article-content__card-container__name-food'>
+            {food.name}
+          </div>
+        </Link>
         <div className='article-content__card-container__description-food'>
           {food.description}
         </div>
         <div className='article-content__card-container__price-food'>
-          R$ {food.price.toFixed(2)}
+          R$ {food.price}
         </div>
 
-        <Link 
-        to='/edit-plate-admin'
-        className='link-style'
+        <Link
+          to='/edit-plate-admin'
+          className='link-style'
         >
-
-
-        <div className='article-content__card-container__pencil-icon'>
-          <PiPencilSimple
-            size={25}
-          />
-        </div>
+          <div className='article-content__card-container__pencil-icon'>
+            <PiPencilSimple
+              size={25}
+            />
+          </div>
         </Link>
       </div>
     </article>
