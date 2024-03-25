@@ -42,6 +42,8 @@ Entre no diretório do projeto
 
 ```bash
   cd Food-Explorer-Frontend
+```
+```bash
   cd Food-Explorer-Backend
 ```
 Instale as dependências
