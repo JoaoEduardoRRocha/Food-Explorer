@@ -7,7 +7,7 @@ Este projeto visa colocar em prática todas as funcionalidades de uma aplicaçã
 
 ## Progresso do Projeto
 
-| Funcionalidades Futuras 🔴| Funcionalidades Em progresso🟡| Funcionalidades Concluídas 🟢 |
+| Funcionalidades Futuras 🔴| Funcionalidades Em progresso 🟡| Funcionalidades Concluídas 🟢 |
 | :---------- | :--------- | :------------------------------------------ |
 | `Teste Unitário`| `Input do tipo File` | `Autenticação com JWT e OTP`
 | `Autenticação de Pagamento`| `Refatoração do Backend` | `Nodemailer para change password`
